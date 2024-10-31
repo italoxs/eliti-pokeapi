@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar({ pokemonFilter }) {
   const logoImg = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
@@ -62,7 +62,7 @@ export default function Navbar() {
               src={logoImg}
               height="3em"
             />
-            <Search>
+            <Search onChange={(e) => pokemonFilter(e.target.value)}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
